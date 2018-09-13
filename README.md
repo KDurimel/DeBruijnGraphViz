@@ -2,7 +2,7 @@
 Génération et visualisation de graphes de chevauchements à partir de reads (projet Université)
 
 ### Installation
-Lancer la commande `make`dans le répertoire racine.
+Executer la commande `make`dans le répertoire racine.
 
 ### Utilisation
 ```bash
