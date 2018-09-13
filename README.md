@@ -11,7 +11,7 @@ Executer la commande `make`dans le répertoire racine.
 ```
 
 ### Exemple de sortie graphique
-```bash
+```text
 	 *** Fichier  /home/wrecker/DUMMY/graphes/Listereads.txt ***
 
 ++++++++++++++ FRAGMENTS AVANT DEDUPLICATION ++++++++++++++
