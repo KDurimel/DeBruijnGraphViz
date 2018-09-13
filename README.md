@@ -9,6 +9,21 @@ Executer la commande `make`dans le répertoire racine.
 #Listereads.txt ou tout autre fichier de reads au même format.
 ./main Listereads.txt 
 ```
+### Fonctionnement
+Le script s'execute uniquement si le lien vers le fichier est donné en argument.
+
+L'execution de déroule alors de la manière suivante (description non exhaustive) : 
+
+* initListeFragments initialise une liste de fragments à partir de la lecture d'un fichier : pour chaque ligne lue dans le fichier, un fragment est généré. On peut dire par abus de language que initListeFragments convertit une ligne de fichier en fragment.
+
+* fsd upprime de la liste de fragments toutes les chaines qui sont facteur d'une autre chaine. Cette fonction est appelée pour la construction du graphe de chevauchement.
+
+* lplc ensuite itère sur chaque fragment et en extrait le suffixe et le prefixe : ces 2 sont comparés caractere par caractere et 
+lplc retourne la plus grande longueur de matching retrouvé. Cette fonction est appelée pour la construction du graphe de chevauchement.
+
+* construitGrapheChevauchement_custom construit le graphe des chevauchements en initialisant le graphe, puis en attribuant un fragment à chaque sommet du graphe (grace a la liste de sommets) les arcs+valuation et les sucesseurs sont ajoutés par itération sur des fonctions d'ajout d'arcs et sucesseurs respectives.
+
+* Les fonctions d'affichage permettent d'afficher de nombreuses informations sur le contenu du graphe et le contenu de départ ayant permis de le générer: Liste des fragments avant déduplication (i.e suppression des fragments contenant le facteur d'un fragment) ; Liste des fragments après déduplication ; Liste des sommets et fragments dans le graphe. (parcours par ordre d'ajout des sommets) ; Vue des sommes et arcs VALUES du graphe ainsi que leur orientation. (experimental,à réellement verifier) ; Vue du graphe selon un parcours en profondeur : les sommets et leurs successeurs sont visités recursivements et marqués quand visités (condition d'arrêt : tous visités)
 
 ### Exemple de sortie graphique
 ```text
